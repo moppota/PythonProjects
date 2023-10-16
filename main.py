@@ -1,1 +1,3 @@
-print("Hello World!")
+import deeznuts
+import random
+deeznuts.getJoke()
