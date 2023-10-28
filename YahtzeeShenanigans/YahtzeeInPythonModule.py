@@ -67,9 +67,9 @@ class functionsNeeded:
     def addValues(self, Type, Score):
         self.card[Type] = Score # updates the score of a specific value 
 
-    def rollDice(self): # rolls dice and returns as a list. 
+    def rollDice(self, number): # rolls dice and returns as a list. 
         dice = []
-        for i in range(5):
+        for i in range(number):
             dice.append(random.randint(1,6))
         return dice
     
