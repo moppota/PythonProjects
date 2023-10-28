@@ -5,14 +5,13 @@ newGame = YahtzeeInPythonModule.functionsNeeded()
 options = YahtzeeInPythonModule.listOfChoices
 running = True # variables setup
 diceRoll = []
-isOptionValid = True
 
 print("Before we start, here are your choices (For what to do with your dice roll),\nand please enter them exactly as shown:")
 print(options)
 print("\n") # telling players this is how I want them to say where the score should go under
 
 while running == True: # main loop
-    for i in range(3):
+    for i in range(3): # last stage is to add a way to choose which dice you want to re roll, will add soon
         input("Press enter to roll dice")
         diceRoll = newGame.rollDice()
         print("Here is your roll, Ordered numerically: ")
@@ -23,6 +22,7 @@ while running == True: # main loop
             pass
         else:
             break
+    isOptionValid = True
     while isOptionValid:
         PlayerChoice = input("What would you like to do? (Please enter exactly as requested at the beginning)")
         if (PlayerChoice in options) == True:
@@ -36,8 +36,7 @@ while running == True: # main loop
                 print("\n")
                 isOptionValid = False # if the option is valid, adds the score to that option and removes it from list since 
             else:
-                print("Not a valid option. Try again.\n ")
-                PlayerChoice = input("What would you like to do? (Please enter exactly as requested at the beginning)")
+                PlayerChoice = input("That is not a valid option, Please enter again. \nWhat would you like to do? (Please enter exactly as requested at the beginning)")
     if len(options) == 0:
         print("Well done, you have completed the game. Here is your ScoreCard: \n")
         newGame.refreshTotals()

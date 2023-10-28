@@ -10,13 +10,13 @@ CardTemplate = {
 
     "Total of Upper Section":0,
 
-    "3 of a kind":1,
-    "4 of a kind":1,
-    "Full House":1,
-    "Small Straight":1,
-    "Large Straight":1,
-    "Yahtzee":1,
-    "Chance":1,
+    "3 of a kind":0,
+    "4 of a kind":0,
+    "Full House":0,
+    "Small Straight":0,
+    "Large Straight":0,
+    "Yahtzee":0,
+    "Chance":0,
 
     "Total of Lower Section":0,
 
@@ -151,7 +151,8 @@ class functionsNeeded:
                         return True, scoreOfCard[score]
                     else:
                         return False, 0
-    
+                case "Chance": #its always possible (only once along with everything else), just return value of everything
+                    return True, sum(dice)
 
 
 
